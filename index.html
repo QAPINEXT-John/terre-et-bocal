@@ -10,14 +10,18 @@
   <meta name="description" content="Épicerie vrac et produits locaux à Saint-Amand : fruits secs, huile d’olive, granola, savons artisanaux. Zéro déchet, bio et producteurs à moins de 80 km.">
 
   <!-- ===== Livrable 3 : balise Google Analytics 4 (gtag.js) ===== -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMNMJWY9GB"></script>
+  <!-- Google tag (gtag.js) — chargé après l'événement load pour ne pas retarder l'affichage (bonus performance) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-FMNMJWY9GB');
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FMNMJWY9GB';
+      document.head.appendChild(s);
+    });
   </script>
 
   <style>
